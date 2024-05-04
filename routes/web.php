@@ -1,6 +1,8 @@
 <?php
 
+use App\Http\Controllers\AuteurController;
 use App\Http\Controllers\MissionController;
+use App\Models\Auteur;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -18,5 +20,6 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/register', [MissionController::class, 'register'])->name('app.mission.register');
-Route::get('/list', [MissionController::class, 'list'])->name('app.mission.list');
+Route::resource('auteurs', AuteurController::class);
+// OU
+// Route::get('/auteurs', [AuteurController::class, 'index'])->name('auteurs.index');
